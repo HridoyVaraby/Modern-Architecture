@@ -70,7 +70,7 @@ export function Header() {
                   <div className="relative group">
                     <button className="flex items-center space-x-1">
                       <span className={cn(
-                        'text-sm font-medium transition-colors hover:text-primary',
+                        'text-sm font-medium transition-colors hover:text-[#d35400]',
                         isScrolled ? 'text-foreground font-semibold' : 'text-white'
                       )}>
                         {item.title}
@@ -85,7 +85,7 @@ export function Header() {
                         <a 
                           key={subIndex}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground"
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-[#d35400]"
                         >
                           {subItem.title}
                         </a>
@@ -96,7 +96,7 @@ export function Header() {
                   <a 
                     href={item.href}
                     className={cn(
-                      'text-sm font-medium transition-colors hover:text-primary',
+                      'text-sm font-medium transition-colors hover:text-[#d35400]',
                       isScrolled ? 'text-foreground font-semibold' : 'text-white'
                     )}
                   >
@@ -144,7 +144,7 @@ export function Header() {
                           <li key={subIndex}>
                             <a 
                               href={subItem.href}
-                              className="text-sm text-muted-foreground hover:text-primary block py-1"
+                              className="text-sm text-muted-foreground hover:text-[#d35400] block py-1"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               {subItem.title}
@@ -156,7 +156,7 @@ export function Header() {
                   ) : (
                     <a 
                       href={item.href}
-                      className="text-sm font-medium text-foreground hover:text-primary block py-2"
+                      className="text-sm font-medium text-foreground hover:text-[#d35400] block py-2"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.title}
