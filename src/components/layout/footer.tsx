@@ -16,16 +16,16 @@ export function Footer() {
               Modern architecture firm dedicated to creating thoughtful, functional, and timeless designs.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-[#BDBDBD] hover:text-[#D35400]" aria-label="Facebook">
+              <a href="#" className="text-[#BDBDBD] hover:text-[#000000]" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="text-[#BDBDBD] hover:text-[#D35400]" aria-label="Instagram">
+              <a href="#" className="text-[#BDBDBD] hover:text-[#000000]" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="text-[#BDBDBD] hover:text-[#D35400]" aria-label="Twitter">
+              <a href="#" className="text-[#BDBDBD] hover:text-[#000000]" aria-label="Twitter">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="text-[#BDBDBD] hover:text-[#D35400]" aria-label="LinkedIn">
+              <a href="#" className="text-[#BDBDBD] hover:text-[#000000]" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
             </div>
@@ -34,12 +34,12 @@ export function Footer() {
           <div>
             <h4 className="font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-[#BDBDBD] hover:text-[#D35400]">Home</a></li>
-              <li><a href="#about" className="text-sm text-[#BDBDBD] hover:text-[#D35400]">About Us</a></li>
-              <li><a href="#services" className="text-sm text-[#BDBDBD] hover:text-[#D35400]">Services</a></li>
-              <li><a href="#projects" className="text-sm text-[#BDBDBD] hover:text-[#D35400]">Projects</a></li>
-              <li><a href="#blog" className="text-sm text-[#BDBDBD] hover:text-[#D35400]">Blog</a></li>
-              <li><a href="#contact" className="text-sm text-[#BDBDBD] hover:text-[#D35400]">Contact</a></li>
+              <li><a href="#" className="text-sm text-[#BDBDBD] hover:text-[#000000]">Home</a></li>
+              <li><a href="#about" className="text-sm text-[#BDBDBD] hover:text-[#000000]">About Us</a></li>
+              <li><a href="#services" className="text-sm text-[#BDBDBD] hover:text-[#000000]">Services</a></li>
+              <li><a href="#projects" className="text-sm text-[#BDBDBD] hover:text-[#000000]">Projects</a></li>
+              <li><a href="#blog" className="text-sm text-[#BDBDBD] hover:text-[#000000]">Blog</a></li>
+              <li><a href="#contact" className="text-sm text-[#BDBDBD] hover:text-[#000000]">Contact</a></li>
             </ul>
           </div>
           
@@ -60,9 +60,9 @@ export function Footer() {
               <Input 
                 type="email" 
                 placeholder="Your email" 
-                className="bg-[#4F4F4F] border-0 focus-visible:ring-[#D35400]" 
+                className="bg-[#4F4F4F] border-0 focus-visible:ring-[#000000]" 
               />
-              <Button className="bg-[#D35400] hover:bg-[#B24400]">Subscribe</Button>
+              <Button variant="default">Subscribe</Button>
             </div>
           </div>
         </div>

@@ -70,7 +70,7 @@ export function Header() {
                   <div className="relative group">
                     <button className="flex items-center space-x-1">
                       <span className={cn(
-                        'text-sm font-medium transition-colors hover:text-[#d35400]',
+                        'text-sm font-medium transition-colors hover:text-[#000000]',
                         isScrolled ? 'text-foreground font-semibold' : 'text-white'
                       )}>
                         {item.title}
@@ -85,7 +85,7 @@ export function Header() {
                         <a 
                           key={subIndex}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-[#d35400]"
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-[#000000]"
                         >
                           {subItem.title}
                         </a>
@@ -96,7 +96,7 @@ export function Header() {
                   <a 
                     href={item.href}
                     className={cn(
-                      'text-sm font-medium transition-colors hover:text-[#d35400]',
+                      'text-sm font-medium transition-colors hover:text-[#000000]',
                       isScrolled ? 'text-foreground font-semibold' : 'text-white'
                     )}
                   >
@@ -106,7 +106,7 @@ export function Header() {
               </li>
             ))}
             <li>
-              <Button variant="default" className="bg-[#D35400] hover:bg-[#B24400]">
+              <Button variant="default" className="bg-[#000000] hover:bg-[#000000] text-white">
                 Book Consultation
               </Button>
             </li>
@@ -144,7 +144,7 @@ export function Header() {
                           <li key={subIndex}>
                             <a 
                               href={subItem.href}
-                              className="text-sm text-muted-foreground hover:text-[#d35400] block py-1"
+                              className="text-sm text-muted-foreground hover:text-[#000000] block py-1"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               {subItem.title}
@@ -156,7 +156,7 @@ export function Header() {
                   ) : (
                     <a 
                       href={item.href}
-                      className="text-sm font-medium text-foreground hover:text-[#d35400] block py-2"
+                      className="text-sm font-medium text-foreground hover:text-[#000000] block py-2"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.title}
@@ -167,7 +167,7 @@ export function Header() {
               <li className="pt-2">
                 <Button 
                   variant="default" 
-                  className="w-full bg-[#D35400] hover:bg-[#B24400]"
+                  className="w-full bg-[#000000] hover:bg-[#000000] text-white"
                 >
                   Book Consultation
                 </Button>

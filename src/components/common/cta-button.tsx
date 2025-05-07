@@ -19,8 +19,8 @@ export function CTAButton({
       asChild
       className={cn(
         variant === 'primary' 
-          ? 'bg-[#D35400] hover:bg-[#B24400] text-white' 
-          : 'bg-transparent border border-[#D35400] text-[#D35400] hover:bg-[#D35400] hover:text-white',
+          ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
+          : 'bg-secondary hover:bg-secondary/80 text-secondary-foreground',
         className
       )}
     >

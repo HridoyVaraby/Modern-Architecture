@@ -53,7 +53,7 @@ export function Blog() {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <span className="bg-[#D35400]/10 text-[#D35400] text-xs font-medium px-2 py-1 rounded">
+                  <span className="bg-[#000000]/10 text-[#000000] text-xs font-medium px-2 py-1 rounded">
                     {article.category}
                   </span>
                   <span className="text-[#4F4F4F] text-xs ml-auto">
@@ -64,7 +64,7 @@ export function Blog() {
                 <p className="text-[#4F4F4F] text-sm mb-4">{article.excerpt}</p>
                 <a 
                   href="#" 
-                  className="text-[#D35400] text-sm font-medium inline-flex items-center hover:underline"
+                  className="text-[#000000] text-sm font-medium inline-flex items-center hover:underline"
                 >
                   Read Article
                   <svg 

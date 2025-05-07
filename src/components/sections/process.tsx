@@ -56,7 +56,7 @@ export function Process() {
                 className="relative flex flex-col md:flex-row items-center"
               >
                 {/* Icon */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D35400] text-white flex items-center justify-center font-semibold text-lg relative z-10 mb-4 md:mb-0">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#000000] text-white flex items-center justify-center font-semibold text-lg relative z-10 mb-4 md:mb-0">
                   {step.icon}
                 </div>
                 

@@ -44,14 +44,14 @@ export function Services() {
               key={service.id}
               className="bg-white p-6 rounded-md shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#D35400]/10 text-[#D35400] mb-4">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#000000]/10 text-[#000000] mb-4">
                 <service.icon size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-[#4F4F4F] mb-4 text-sm">{service.description}</p>
               <a 
                 href="#" 
-                className="text-[#D35400] text-sm font-medium inline-flex items-center hover:underline"
+                className="text-[#000000] text-sm font-medium inline-flex items-center hover:underline"
               >
                 Learn More 
                 <svg 

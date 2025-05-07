@@ -29,7 +29,7 @@ export function About() {
               alt="Modern office space with glass walls"
               className="w-full h-auto rounded-md shadow-lg"
             />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#D35400] rounded-md hidden md:block" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#000000] rounded-md hidden md:block" />
           </div>
         </div>
       </div>

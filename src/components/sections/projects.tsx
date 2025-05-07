@@ -59,7 +59,7 @@ export function Projects() {
                 className={cn(
                   'px-4 py-2 text-sm font-medium rounded-md transition-colors',
                   activeCategory === category.id
-                    ? 'bg-[#D35400] text-white'
+                    ? 'bg-[#000000] text-white'
                     : 'bg-[#F5F5F5] text-[#4F4F4F] hover:bg-[#BDBDBD]'
                 )}
               >

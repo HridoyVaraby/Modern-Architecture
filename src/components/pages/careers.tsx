@@ -53,7 +53,7 @@ export function Careers() {
                       <span className="text-sm text-[#4F4F4F]">{job.experience}</span>
                     </div>
                   </div>
-                  <Button className="bg-[#D35400] hover:bg-[#B24400]">
+                  <Button variant="default">
                     Apply Now
                   </Button>
                 </div>

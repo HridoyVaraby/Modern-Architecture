@@ -63,7 +63,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="bg-[#333333] border-0 focus-visible:ring-[#D35400]"
+                    className="bg-[#333333] border-0 focus-visible:ring-[#000000]"
                     required
                   />
                 </div>
@@ -74,7 +74,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Your Email"
-                    className="bg-[#333333] border-0 focus-visible:ring-[#D35400]"
+                    className="bg-[#333333] border-0 focus-visible:ring-[#000000]"
                     required
                   />
                 </div>
@@ -85,7 +85,7 @@ export function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Your Phone"
-                  className="bg-[#333333] border-0 focus-visible:ring-[#D35400]"
+                  className="bg-[#333333] border-0 focus-visible:ring-[#000000]"
                 />
               </div>
               <div className="mb-6">
@@ -100,7 +100,7 @@ export function Contact() {
               </div>
               <Button 
                 type="submit" 
-                className="w-full bg-[#D35400] hover:bg-[#B24400]"
+                className="w-full bg-[#000000] hover:bg-[#000000]"
               >
                 Send Message
               </Button>

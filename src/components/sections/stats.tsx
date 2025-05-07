@@ -7,7 +7,7 @@ const data = [
   { name: 'Urban Planning', value: 10 },
 ];
 
-const COLORS = ['#D35400', '#4F4F4F', '#212121', '#BDBDBD'];
+const COLORS = ['#000000', '#4F4F4F', '#212121', '#BDBDBD'];
 
 const stats = [
   { label: 'Projects Completed', value: '120+' },
@@ -28,7 +28,7 @@ export function Stats() {
                 key={index}
                 className="bg-[#F5F5F5] p-6 rounded-md text-center"
               >
-                <h3 className="text-3xl md:text-4xl font-bold text-[#D35400]">{stat.value}</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-[#000000]">{stat.value}</h3>
                 <p className="text-[#4F4F4F] text-sm mt-2">{stat.label}</p>
               </div>
             ))}
