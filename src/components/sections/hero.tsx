@@ -17,7 +17,7 @@ export function Hero() {
       <div className="container relative z-10 mt-20">
         <div className="max-w-3xl">
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-[#000000] text-sm md:text-base uppercase font-medium tracking-wider block mb-4">
+            <span className="text-white text-sm md:text-base uppercase font-medium tracking-wider block mb-4">
               Modern Architecture
             </span>
             Shaping Space. Inspiring Life.

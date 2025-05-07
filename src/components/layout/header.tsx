@@ -59,7 +59,7 @@ export function Header() {
       )}
     >
       <div className="container flex items-center justify-between">
-        <Logo />
+        <Logo variant={isScrolled ? 'default' : 'white'} />
         
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
