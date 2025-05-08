@@ -7,9 +7,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-[#212121] text-white pt-16 pb-8">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+    <footer className="bg-[#212121] text-white py-20 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 hidden md:block" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 hidden md:block" />
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rounded-full hidden lg:block" />
+      <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-white/5 rounded-full hidden lg:block" />
+      
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <Logo variant="white" />
             <p className="mt-4 text-sm text-[#BDBDBD]">
@@ -67,7 +73,7 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-[#4F4F4F] pt-8 mt-8 text-center text-sm text-[#BDBDBD]">
+        <div className="border-t border-[#4F4F4F] pt-8 mt-12 text-center text-sm text-[#BDBDBD]">
           <p>© {currentYear} Modern Architecture. All rights reserved.</p>
         </div>
       </div>

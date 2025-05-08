@@ -9,7 +9,7 @@ export function About() {
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#000000]/5 rounded-full -translate-y-1/2 translate-x-1/2 hidden md:block" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#000000]/5 rounded-full translate-y-1/2 -translate-x-1/2 hidden md:block" />
       
-      <div className="container relative z-10">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div className="max-w-xl">
             <SectionHeading 

@@ -58,7 +58,7 @@ export function Header() {
           : 'bg-transparent py-6'
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl flex items-center justify-between">
         <Logo variant={isScrolled ? 'default' : 'white'} />
         
         {/* Desktop Navigation */}
@@ -130,7 +130,7 @@ export function Header() {
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-md animate-in slide-in-from-top">
-          <nav className="container py-4">
+          <nav className="container mx-auto px-4 md:px-6 max-w-7xl py-4">
             <ul className="flex flex-col space-y-4">
               {navItems.map((item, index) => (
                 <li key={index}>

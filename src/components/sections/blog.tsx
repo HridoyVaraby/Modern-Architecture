@@ -32,7 +32,7 @@ const articles = [
 export function Blog() {
   return (
     <section id="blog" className="py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <SectionHeading 
           title="From Our Studio" 
           subtitle="We share insights, trends, and design inspiration to keep you informed and inspired."

@@ -43,7 +43,7 @@ export function Projects() {
   
   return (
     <section id="projects" className="py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <SectionHeading 
           title="Selected Works" 
           subtitle="Explore a selection of our signature projects that demonstrate innovation, clarity, and craftsmanship."

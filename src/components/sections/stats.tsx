@@ -19,7 +19,7 @@ const stats = [
 export function Stats() {
   return (
     <section id="stats" className="py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-8">

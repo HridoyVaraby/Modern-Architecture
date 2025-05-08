@@ -1,5 +1,6 @@
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
+import { cn } from '@/lib/utils';
 
 const processSteps = [
   {
@@ -36,42 +37,66 @@ const processSteps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-20 bg-[#212121] text-white">
-      <div className="container">
-        <SectionHeading 
-          title="Our Process" 
-          subtitle="Our streamlined process ensures quality, creativity, and transparency at every step."
-          className="text-white"
-        />
+    <section id="process" className="py-24 bg-[#212121] text-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 hidden md:block" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 hidden md:block" />
+      
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
+        <div className="flex flex-col items-center text-center mb-12">
+          <SectionHeading 
+            title="Our Process" 
+            align="center"
+            className="text-white mb-4"
+          />
+          <div className="h-1 w-24 bg-white mb-6"></div>
+          <p className="text-[#BDBDBD] max-w-2xl">
+            Our streamlined process ensures quality, creativity, and transparency at every step.
+          </p>
+        </div>
         
         <div className="relative mt-16">
           {/* Process Timeline Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#4F4F4F] transform -translate-x-1/2 hidden md:block" />
+          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-white/80 via-white/50 to-white/20 transform md:-translate-x-1/2" />
           
           {/* Process Steps */}
-          <div className="space-y-16 md:space-y-0">
+          <div className="space-y-16">
             {processSteps.map((step, index) => (
               <div 
                 key={step.id}
-                className="relative flex flex-col md:flex-row items-center"
+                className={cn(
+                  "relative flex items-start gap-6 md:gap-0",
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                )}
               >
                 {/* Icon */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#000000] text-white flex items-center justify-center font-semibold text-lg relative z-10 mb-4 md:mb-0">
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-white text-[#212121] flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">
                   {step.icon}
                 </div>
                 
-                {/* Content - alternating left and right */}
-                <div className={`md:w-1/2 md:absolute ${index % 2 === 0 ? 'md:left-0 md:pr-16 md:text-right' : 'md:right-0 md:pl-16'}`}>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-[#BDBDBD] text-sm">{step.description}</p>
+                {/* Content */}
+                <div className={cn(
+                  "md:w-5/12",
+                  index % 2 === 0 ? "md:pr-16 md:text-left md:ml-10" : "md:pl-16 md:text-right md:mr-10"
+                )}>
+                  <div className="bg-[#2A2A2A] p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-5px]">
+                    <h3 className="text-xl font-semibold mb-3 text-white">{step.title}</h3>
+                    <p className="text-[#BDBDBD] leading-relaxed">{step.description}</p>
+                  </div>
+                  
+                  {/* Connector line for desktop */}
+                  <div className={cn(
+                    "absolute top-7 hidden md:block h-[2px] bg-white/30 w-16",
+                    index % 2 === 0 ? "right-[calc(50%+2rem)]" : "left-[calc(50%+2rem)]"
+                  )} />
                 </div>
               </div>
             ))}
           </div>
         </div>
         
-        <div className="mt-16 text-center">
-          <CTAButton href="#" variant="primary">
+        <div className="mt-20 text-center">
+          <CTAButton href="#" variant="primary" className="px-8 py-3 text-base">
             Discover Our Design Process
           </CTAButton>
         </div>
