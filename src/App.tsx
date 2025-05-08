@@ -2,10 +2,11 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { Layout } from '@/components/layout/layout';
 import { Home } from '@/components/pages/home';
-import { About } from '@/components/sections/about';
-import { Services } from '@/components/sections/services';
+import { About } from '@/components/pages/about';
+import { Services } from '@/components/pages/services';
 import { Portfolio } from '@/components/pages/portfolio';
 import { Process } from '@/components/sections/process';
+// Note: Services is now imported from pages folder above
 import { Blog } from '@/components/pages/blog';
 import { Testimonials } from '@/components/pages/testimonials';
 import { Careers } from '@/components/pages/careers';
