@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { Layout } from '@/components/layout/layout';
@@ -6,54 +7,31 @@ import { About } from '@/components/pages/about';
 import { Services } from '@/components/pages/services';
 import { Portfolio } from '@/components/pages/portfolio';
 import { Process } from '@/components/sections/process';
-// Note: Services is now imported from pages folder above
 import { Blog } from '@/components/pages/blog';
 import { Testimonials } from '@/components/pages/testimonials';
 import { Careers } from '@/components/pages/careers';
 import { Contact } from '@/components/pages/contact';
 
 function App() {
-  // Get current path
-  const path = window.location.pathname;
-
-  // Render component based on path
-  const renderComponent = () => {
-    switch (path) {
-      case '/':
-        return <Home />;
-      case '/about':
-        return <About />;
-      case '/services':
-        return <Services />;
-      case '/portfolio':
-      case '/portfolio/residential':
-      case '/portfolio/commercial':
-      case '/portfolio/institutional':
-      case '/portfolio/interior-design':
-      case '/portfolio/landscape':
-        return <Portfolio />;
-      case '/process':
-        return <Process />;
-      case '/blog':
-        return <Blog />;
-      case '/testimonials':
-        return <Testimonials />;
-      case '/careers':
-        return <Careers />;
-      case '/contact':
-        return <Contact />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <ThemeProvider defaultTheme="light">
-      <Layout>
-        {renderComponent()}
-      </Layout>
-      <Toaster />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider defaultTheme="light">
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio/*" element={<Portfolio />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Layout>
+        <Toaster />
+      </ThemeProvider>
+    </Router>
   );
 }
 
