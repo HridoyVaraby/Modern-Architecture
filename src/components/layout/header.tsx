@@ -71,13 +71,13 @@ export function Header() {
                     <button className="flex items-center space-x-1">
                       <span className={cn(
                         'text-sm font-medium transition-colors hover:text-[#000000]',
-                        isScrolled ? 'text-foreground font-semibold' : 'text-white'
+                        isScrolled ? 'text-foreground font-semibold' : 'text-black'
                       )}>
                         {item.title}
                       </span>
                       <ChevronDown className={cn(
                         'h-4 w-4 transition-transform group-hover:rotate-180',
-                        isScrolled ? 'text-foreground' : 'text-white'
+                        isScrolled ? 'text-foreground' : 'text-black'
                       )} />
                     </button>
                     <div className="absolute left-0 top-full mt-2 w-48 bg-background shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
