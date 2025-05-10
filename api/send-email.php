@@ -1,4 +1,8 @@
 <?php
+// Enable output buffering and error suppression
+ob_start();
+
+// Move all headers to the very top
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -6,8 +10,8 @@ header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['error' => 'Method not allowed']);
-    exit;
+    ob_end_clean();
+    die(json_encode(['error' => 'Method not allowed']));
 }
 
 // Get POST data
@@ -15,8 +19,8 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 if (!$data) {
     http_response_code(400);
-    echo json_encode(['error' => 'Invalid request data']);
-    exit;
+    ob_end_clean();
+    die(json_encode(['error' => 'Invalid request data']));
 }
 
 // Validate required fields
@@ -24,8 +28,8 @@ $required_fields = ['name', 'email', 'message'];
 foreach ($required_fields as $field) {
     if (empty($data[$field])) {
         http_response_code(400);
-        echo json_encode(['error' => "$field is required"]);
-        exit;
+        ob_end_clean();
+        die(json_encode(['error' => "$field is required"]));
     }
 }
 
@@ -71,9 +75,12 @@ try {
     $mail->AltBody = strip_tags(str_replace(['<br>', '</p>'], "\n", $message));
 
     $mail->send();
-    echo json_encode(['success' => true, 'message' => 'Email sent successfully']);
+    ob_end_clean();
+    die(json_encode(['success' => true, 'message' => 'Email sent successfully']));
 
 } catch (Exception $e) {
+    // Clean any output buffer before sending error
+    ob_end_clean();
     http_response_code(500);
-    echo json_encode(['error' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo]);
+    die(json_encode(['error' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo]));
 }

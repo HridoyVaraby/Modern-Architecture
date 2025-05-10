@@ -19,19 +19,40 @@ function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    toast.success('Message sent successfully!', {
-      description: 'We will get back to you soon.',
-    });
-    
-    // Reset form
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    try {
+      const response = await fetch('/api/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error(`Invalid response format: ${text.slice(0, 100)}`);
+      }
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data?.error || 'Failed to send message');
+      }
+      
+      toast.success('Message sent successfully!', {
+        description: 'We will get back to you soon.',
+      });
+      
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      toast.error('Failed to send message', {
+        description: error instanceof Error ? error.message : 'Please try again later.',
+      });
+    }
   };
   
   return (
