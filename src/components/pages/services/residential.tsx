@@ -1,7 +1,12 @@
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
+import { useEffect } from 'react';
 
-function Residential() {
+export default function Residential() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -198,5 +203,3 @@ function Residential() {
     </>
   );
 }
-
-export default Residential;

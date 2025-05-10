@@ -11,14 +11,16 @@ import Landscape from './services/landscape';
 
 function Services() {
   return (
-    <Routes>
-      <Route path="" element={<ServicesHome />} />
-      <Route path="residential" element={<Residential />} />
-      <Route path="commercial" element={<Commercial />} />
-      <Route path="institutional" element={<Institutional />} />
-      <Route path="interior-design" element={<InteriorDesign />} />
-      <Route path="landscape" element={<Landscape />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="" element={<ServicesHome />} />
+        <Route path="residential" element={<Residential />} />
+        <Route path="commercial" element={<Commercial />} />
+        <Route path="institutional" element={<Institutional />} />
+        <Route path="interior-design" element={<InteriorDesign />} />
+        <Route path="landscape" element={<Landscape />} />
+      </Routes>
+    </>  
   );
 }
 

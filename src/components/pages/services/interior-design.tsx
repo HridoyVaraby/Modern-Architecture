@@ -1,7 +1,11 @@
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
+import { useEffect } from 'react';
 
-function InteriorDesign() {
+export default function InteriorDesign() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {/* Hero Section */}
@@ -198,5 +202,3 @@ function InteriorDesign() {
     </>
   );
 }
-
-export default InteriorDesign;

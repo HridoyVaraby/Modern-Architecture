@@ -1,7 +1,11 @@
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
+import { useEffect } from 'react';
 
-function Commercial() {
+export default function Commercial() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {/* Hero Section */}
@@ -198,5 +202,3 @@ function Commercial() {
     </>
   );
 }
-
-export default Commercial;
