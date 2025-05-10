@@ -126,7 +126,7 @@ const testimonials = [
   },
 ];
 
-export function DesignProcess() {
+function DesignProcess() {
   return (
     <>
       {/* Hero Section */}
@@ -284,3 +284,5 @@ export function DesignProcess() {
     </>
   );
 }
+
+export default DesignProcess;

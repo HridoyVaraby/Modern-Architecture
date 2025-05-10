@@ -68,7 +68,7 @@ const categories = [
   { name: 'Climate Resilience', count: 2 },
 ];
 
-export function Blog() {
+function Blog() {
   return (
     <>
       {/* Hero Section */}
@@ -239,3 +239,5 @@ export function Blog() {
     </>
   );
 }
+
+export default Blog;

@@ -3,13 +3,13 @@ import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
 
 // Import service subpages
-import { Residential } from './services/residential';
-import { Commercial } from './services/commercial';
-import { Institutional } from './services/institutional';
-import { InteriorDesign } from './services/interior-design';
-import { Landscape } from './services/landscape';
+import Residential from './services/residential';
+import Commercial from './services/commercial';
+import Institutional from './services/institutional';
+import InteriorDesign from './services/interior-design';
+import Landscape from './services/landscape';
 
-export function Services() {
+function Services() {
   return (
     <Routes>
       <Route path="" element={<ServicesHome />} />
@@ -57,7 +57,7 @@ function ServicesContent() {
       'Color & Texture Consultation',
     ],
     image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    href: '/services/interior-design',
+    href: 'interior-design',
   },
   {
     id: 'urban-planning',
@@ -72,7 +72,7 @@ function ServicesContent() {
       'Sustainable Urban Solutions',
     ],
     image: 'https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    href: '/services/institutional',
+    href: 'institutional',
   },
   {
     id: 'landscape-architecture',
@@ -87,7 +87,7 @@ function ServicesContent() {
       'Outdoor Lighting Design',
     ],
     image: 'https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    href: '/services/landscape',
+    href: 'landscape',
   },
   {
     id: 'project-management',
@@ -102,7 +102,7 @@ function ServicesContent() {
       'Quality Control & Assurance',
     ],
     image: 'https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    href: '/services/commercial',
+    href: 'commercial',
   },
   {
     id: 'sustainable-design',
@@ -380,3 +380,5 @@ const processSteps = [
     </>
   );
 }
+
+export default Services;

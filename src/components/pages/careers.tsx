@@ -60,7 +60,7 @@ const benefits = [
   },
 ];
 
-export function Careers() {
+function Careers() {
   return (
     <>
       {/* Hero Section */}
@@ -228,3 +228,5 @@ export function Careers() {
     </>
   );
 }
+
+export default Careers;

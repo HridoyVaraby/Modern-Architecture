@@ -86,7 +86,7 @@ const stats = [
   { value: '10+', label: 'Years of Excellence' },
 ];
 
-export function Testimonials() {
+function Testimonials() {
   return (
     <>
       {/* Hero Section */}
@@ -254,3 +254,5 @@ export function Testimonials() {
     </>
   );
 }
+
+export default Testimonials;

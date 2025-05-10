@@ -61,7 +61,7 @@ const processSteps = [
   },
 ];
 
-export function Portfolio() {
+function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all');
   
   const filteredProjects = activeCategory === 'all' 
@@ -195,3 +195,5 @@ export function Portfolio() {
     </>
   );
 }
+
+export default Portfolio;

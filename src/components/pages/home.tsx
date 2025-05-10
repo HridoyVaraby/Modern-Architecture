@@ -8,7 +8,7 @@ import { Testimonials } from '@/components/sections/testimonials';
 import { Blog } from '@/components/sections/blog';
 import { Contact } from '@/components/sections/contact';
 
-export function Home() {
+function Home() {
   return (
     <>
       <Hero />
@@ -23,3 +23,5 @@ export function Home() {
     </>
   );
 }
+
+export default Home;

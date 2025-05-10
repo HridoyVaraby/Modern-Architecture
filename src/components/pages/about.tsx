@@ -1,7 +1,7 @@
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
 
-export function About() {
+function About() {
   return (
     <>
       {/* Hero Section */}
@@ -241,3 +241,5 @@ export function About() {
     </>
   );
 }
+
+export default About;

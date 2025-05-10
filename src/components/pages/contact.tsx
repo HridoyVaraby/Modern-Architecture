@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CTAButton } from '@/components/common/cta-button';
 import { toast } from 'sonner';
 
-export function Contact() {
+function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -269,3 +269,5 @@ export function Contact() {
     </>
   );
 }
+
+export default Contact;

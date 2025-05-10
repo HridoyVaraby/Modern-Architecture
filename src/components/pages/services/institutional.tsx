@@ -1,7 +1,7 @@
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
 
-export function Institutional() {
+function Institutional() {
   return (
     <>
       {/* Hero Section */}
@@ -198,3 +198,5 @@ export function Institutional() {
     </>
   );
 }
+
+export default Institutional;
