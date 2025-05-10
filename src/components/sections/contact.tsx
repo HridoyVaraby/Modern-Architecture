@@ -22,8 +22,16 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Debug log to verify form data
+    console.log('Form submitted:', formData);
+    
     try {
-      const response = await fetch('/api/send-email.php', {
+      // Use a relative path that works with Vite's development server
+      const apiUrl = import.meta.env.DEV ? './api/send-email.php' : '/api/send-email.php';
+      
+      console.log('Sending request to:', apiUrl);
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +39,10 @@ export function Contact() {
         body: JSON.stringify(formData),
       });
 
+      console.log('Response status:', response.status);
+      
       const data = await response.json();
+      console.log('Response data:', data);
       
       if (data.success) {
         toast.success('Message sent successfully!', {
@@ -43,6 +54,7 @@ export function Contact() {
         throw new Error(data.error || 'Failed to send message');
       }
     } catch (error) {
+      console.error('API error:', error);
       toast.error('Failed to send message', {
         description: error instanceof Error ? error.message : 'Please try again later.',
       });
