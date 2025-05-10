@@ -74,7 +74,7 @@ export function Services() {
         </div>
         
         <div className="mt-12 text-center">
-          <CTAButton href="#" variant="primary">
+          <CTAButton href="/services" variant="primary">
             View All Services
           </CTAButton>
         </div>

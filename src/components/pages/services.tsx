@@ -1,7 +1,34 @@
+import { Routes, Route, Link } from 'react-router-dom';
 import { SectionHeading } from '@/components/common/section-heading';
 import { CTAButton } from '@/components/common/cta-button';
 
-const services = [
+// Import service subpages
+import { Residential } from './services/residential';
+import { Commercial } from './services/commercial';
+import { Institutional } from './services/institutional';
+import { InteriorDesign } from './services/interior-design';
+import { Landscape } from './services/landscape';
+
+export function Services() {
+  return (
+    <Routes>
+      <Route path="" element={<ServicesHome />} />
+      <Route path="residential" element={<Residential />} />
+      <Route path="commercial" element={<Commercial />} />
+      <Route path="institutional" element={<Institutional />} />
+      <Route path="interior-design" element={<InteriorDesign />} />
+      <Route path="landscape" element={<Landscape />} />
+    </Routes>
+  );
+}
+
+function ServicesHome() {
+  return <ServicesContent />;
+}
+
+function ServicesContent() {
+  
+  const services = [
   {
     id: 'architectural-design',
     title: 'Architectural Design',
@@ -15,6 +42,7 @@ const services = [
       'Building Information Modeling (BIM)',
     ],
     image: 'https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    href: 'residential'
   },
   {
     id: 'interior-design',
@@ -29,6 +57,7 @@ const services = [
       'Color & Texture Consultation',
     ],
     image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    href: '/services/interior-design',
   },
   {
     id: 'urban-planning',
@@ -43,6 +72,7 @@ const services = [
       'Sustainable Urban Solutions',
     ],
     image: 'https://images.pexels.com/photos/2119713/pexels-photo-2119713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    href: '/services/institutional',
   },
   {
     id: 'landscape-architecture',
@@ -57,6 +87,7 @@ const services = [
       'Outdoor Lighting Design',
     ],
     image: 'https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    href: '/services/landscape',
   },
   {
     id: 'project-management',
@@ -71,6 +102,7 @@ const services = [
       'Quality Control & Assurance',
     ],
     image: 'https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    href: '/services/commercial',
   },
   {
     id: 'sustainable-design',
@@ -85,6 +117,7 @@ const services = [
       'Sustainable Material Selection',
     ],
     image: 'https://images.pexels.com/photos/2041556/pexels-photo-2041556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    href: 'residential',
   },
 ];
 
@@ -116,7 +149,7 @@ const processSteps = [
   },
 ];
 
-export function Services() {
+// Continue ServicesContent implementation
   return (
     <>
       {/* Hero Section */}
@@ -172,9 +205,26 @@ export function Services() {
                   <div className="text-3xl mb-4">{service.icon}</div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-[#4F4F4F] mb-4">{service.description}</p>
-                  <CTAButton href={`#${service.id}`} variant="secondary" className="text-sm py-1 px-4">
-                    Learn More
-                  </CTAButton>
+                  <Link 
+                    to={service.href} 
+                    className="text-[#000000] text-sm font-medium inline-flex items-center hover:underline"
+                  >
+                    Learn More 
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-4 w-4 ml-1" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M9 5l7 7-7 7" 
+                      />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -76,14 +76,14 @@ export function Portfolio() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: 'url("https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+            backgroundImage: 'url("https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
           }}
         >
           <div className="absolute inset-0 bg-black/50" />
         </div>
         
         {/* Content */}
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10 pt-14">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10 pt-[4.5rem]">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Our Portfolio

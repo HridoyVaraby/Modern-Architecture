@@ -17,7 +17,7 @@ export function About() {
         </div>
         
         {/* Content */}
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10 pt-10">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10 pt-[4.5rem]">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               About Us

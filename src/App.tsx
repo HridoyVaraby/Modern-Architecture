@@ -6,7 +6,7 @@ import { Home } from '@/components/pages/home';
 import { About } from '@/components/pages/about';
 import { Services } from '@/components/pages/services';
 import { Portfolio } from '@/components/pages/portfolio';
-import { Process } from '@/components/sections/process';
+import { DesignProcess } from '@/components/pages/design-process';
 import { Blog } from '@/components/pages/blog';
 import { Testimonials } from '@/components/pages/testimonials';
 import { Careers } from '@/components/pages/careers';
@@ -20,9 +20,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/services/*" element={<Services />} />
             <Route path="/portfolio/*" element={<Portfolio />} />
-            <Route path="/process" element={<Process />} />
+            <Route path="/process" element={<DesignProcess />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/careers" element={<Careers />} />
