@@ -50,7 +50,7 @@ try {
 
     // Recipients
     $mail->setFrom('admin@modernarchitecturebd.com', 'Modern Architecture Contact Form');
-    $mail->addAddress('modernarchitecturebd@gmail.com');
+    $mail->addAddress('info@modernarchitecturebd.com');
     $mail->addReplyTo($data['email'], $data['name']);
 
     // Content
