@@ -40,6 +40,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Create a new PHPMailer instance
+// Create error log file if it doesn't exist
+$logFile = __DIR__ . '/email_errors.log';
+if (!file_exists($logFile)) {
+    file_put_contents($logFile, '');
+}
+
+// Log start of email attempt
+$logMessage = '[' . date('Y-m-d H:i:s') . '] Attempting to send email from: ' . $data['email'] . "\n";
+file_put_contents($logFile, $logMessage, FILE_APPEND);
+
 try {
     $mail = new PHPMailer(true);
 
@@ -83,4 +93,19 @@ try {
     ob_end_clean();
     http_response_code(500);
     die(json_encode(['error' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo]));
+    
+    // Log successful email
+    $logMessage = '[' . date('Y-m-d H:i:s') . '] Email successfully sent to: modernarchitecturebd@gmail.com' . "\n\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    
+    echo json_encode(['success' => true, 'message' => 'Email sent successfully']);
+
+} catch (Exception $e) {
+    // Log email error
+    $errorMessage = $mail->ErrorInfo;
+    $logMessage = '[' . date('Y-m-d H:i:s') . '] Error sending email: ' . $errorMessage . "\n\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    
+    http_response_code(500);
+    echo json_encode(['error' => 'Message could not be sent. Mailer Error: ' . $errorMessage]);
 }
