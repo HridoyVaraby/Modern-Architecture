@@ -62,24 +62,37 @@ export function Header() {
               <li key={index}>
                 {item.items ? (
                   <div className="relative group">
-                    <button className="flex items-center space-x-1">
-                      <span className={cn(
-                        'text-sm font-medium transition-colors hover:text-[#000000]',
-                        isScrolled ? 'text-foreground font-semibold' : 'text-white'
-                      )}>
-                        {item.title}
-                      </span>
-                      <ChevronDown className={cn(
-                        'h-4 w-4 transition-transform group-hover:rotate-180',
-                        isScrolled ? 'text-foreground' : 'text-white'
-                      )} />
-                    </button>
+                    {(() => {
+                      const isServices = item.title === 'Services';
+                      return (
+                        <button
+                          className={cn(
+                            'flex items-center space-x-1 px-3 py-2 rounded-md transition-colors',
+                            isScrolled
+                              ? 'text-foreground font-semibold hover:bg-black hover:text-white bg-transparent'
+                              : isServices
+                              ? 'bg-white text-black hover:bg-gray-100'
+                              : 'text-white hover:bg-white hover:text-black'
+                          )}
+                        >
+                          <span className={cn('text-sm font-medium', isScrolled ? 'font-semibold' : '')}>
+                            {item.title}
+                          </span>
+                          <ChevronDown className={cn('h-4 w-4 transition-transform group-hover:rotate-180')} />
+                        </button>
+                      );
+                    })()}
                     <div className="absolute left-0 top-full mt-2 w-48 bg-background shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                       {item.items.map((subItem, subIndex) => (
                         <a 
                           key={subIndex}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-[#000000]"
+                          className={cn(
+                            'block px-4 py-2 text-sm rounded-md transition-colors',
+                              isScrolled
+                                ? 'text-foreground hover:bg-black hover:text-white'
+                                : 'text-black hover:bg-black hover:text-white'
+                          )}
                         >
                           {subItem.title}
                         </a>
@@ -90,8 +103,10 @@ export function Header() {
                   <a 
                     href={item.href}
                     className={cn(
-                      'text-sm font-medium transition-colors hover:text-[#000000]',
-                      isScrolled ? 'text-foreground font-semibold' : 'text-white'
+                      'text-sm font-medium px-3 py-2 rounded-md transition-colors',
+                      isScrolled
+                        ? 'text-foreground font-semibold hover:bg-black hover:text-white'
+                        : 'text-white hover:bg-white hover:text-black'
                     )}
                   >
                     {item.title}
